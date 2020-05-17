@@ -1,5 +1,5 @@
 # Ganmo
-Ganmo Simple php MVC framework created by [Abdulsalam Ishaq](https://github.com/kayode-suc) For learning purpose to improving my php skills
+Ganmo php MVC framework created by [Abdulsalam Ishaq](https://github.com/kayode-suc) For learning purpose to improving my php skills
 
 ### Disclaimer
 
@@ -30,7 +30,7 @@ Or use whatever suit you.
 ### Folder structure
 Ganmo
 
-``` PHP  
+``` 
   |____App 
        |____config 
             |____config.php 
@@ -94,7 +94,33 @@ Modify only the RewriteBase to /__PROJECT_ROOT_FOLDER__/public.
   RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
 </IfModule>
 ```
-### Working with helpers
+### Controllers
+A Controller is simply a class file that is named in a way that can be associated with a URI.
+Controllers are the heart of your application, as they determine how HTTP requests should be handled.
+
+**Consider this URI:**
+
+``` PHP
+<?php
+class Blog extends Controller {
+
+        public function index()
+        {
+                echo 'Hello World!';
+        }
+}
+```
+Then save the file to your App/controllers/ directory.
+
+######Note => The controller name must be same as the class name so
+               
+               The file must be called ‘Blog.php’, with a capital ‘B’ .
+
+Now visit the your site using a URL similar to this:
+
+```
+example.com/index.php/blog/
+```
 
 
 ## Documentation
