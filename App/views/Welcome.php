@@ -50,7 +50,7 @@
             </center>
             <p class="footer">
                 This project is released under <strong><a href="https://opensource.org/licenses/MIT">MIT license</a></strong>.
-                Ganmo Version <strong><? echo VERSION; ?></strong>
+                Ganmo Version <strong>1.0.0</strong>
             </p>
         </div>
     </div>
