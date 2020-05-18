@@ -109,10 +109,9 @@ class Blog extends Controller {
 Then save the file to your App/controllers/ directory.
 
 ###### Note => 1. The controller name must be same as the class name.
-               2. Class names must start with an uppercase letter.
-               3. always make sure your controller extends the parent controller class so that it can inherit all its           methods.
-          so
-               The file must be called ‘Blog.php’, with a capital ‘B’ .
+2. Class names must start with an uppercase letter.
+3. always make sure your controller extends the parent controller class so that it can inherit all its methods. 
+so The file must be called ‘Blog.php’, with a capital ‘B’ .
 
 Now visit the your site using a URL similar to this:
 
