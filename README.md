@@ -171,7 +171,7 @@ class Users extends Controller {
      }
 }
 ```
-##### Defining a Default Controller
+#### Defining a Default Controller
 
 Ganmo can be told to load a default controller when a URI is not present, as will be the case when only your site root URL is requested. To specify a default controller, open your App/config/config.php file and set this variable:
 
