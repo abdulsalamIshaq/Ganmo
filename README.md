@@ -112,6 +112,7 @@ Then save the file to your App/controllers/ directory.
 1. **The controller name must be same as the class name.**
 2. **Class names must start with an uppercase letter.**
 3. **always make sure your controller extends the parent controller class so that it can inherit all its methods.** 
+     
      so The file must be called ‘Blog.php’, with a capital ‘B’ .
 
 Now visit the your site using a URL similar to this:
@@ -122,7 +123,7 @@ example.com/Blog/
 
 If you did it right, you should see:
 ```
-     Hello World!
+Hello World!
 ```
 #### Methods
 In the above example the method name is index(). The “index” method is always loaded by default if the second segment of the URI is empty. Another way to show your “Hello World” message would be this:
@@ -150,7 +151,7 @@ example.com/Blog/posts/
 ```
 You should see your new message "Nice Post".
 
-##### Passing URI Segments to your methods
+#### Passing URI Segments to your methods
 
 If your URI contains more than two segments they will be passed to your method as parameters.
 
