@@ -235,14 +235,14 @@ Ganmo will intelligently handle multiple calls to $this->view() from within a co
 ``` PHP
 class Page extends Controller {
 
-        public function index()
-        {
-                $data['page_title'] = 'Your title';
-                $this->view('header');
-                $this->view('menu');
-                $this->view('content', $data);
-                $this->view('footer');
-        }
+     public function index()
+     {
+          $data['page_title'] = 'Your title';
+          $this->view('header');
+          $this->view('menu');
+          $this->view('content', $data);
+          $this->view('footer');
+     }
 
 }
 ```
