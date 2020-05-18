@@ -76,8 +76,6 @@ define('BASE_URL', '_YOUR_URL_');
 // Site Name
 define('SITENAME', '_YOUR_SITENAME_');
 ```
-Set your default controller to be index automatically as your BASE_URL is being visit
-
 
 ### Htaccess file
 
@@ -95,34 +93,93 @@ Modify only the RewriteBase to /__PROJECT_ROOT_FOLDER__/public.
 </IfModule>
 ```
 ### Controllers
-A Controller is simply a class file that is named in a way that can be associated with a URI.
-Controllers are the heart of your application, as they determine how HTTP requests should be handled.
+     A Controller is simply a class file that is named in a way that can be associated with a URI.
+     Controllers are the heart of your application, as they determine how HTTP requests should be handled.
 
-**Consider this URI:**
+     **Consider this URI:**
 
-``` PHP
-<?php
-class Blog extends Controller {
+     ``` PHP
+     class Blog extends Controller {
 
-        public function index()
-        {
-                echo 'Hello World!';
+          public function index() {
+               echo 'Hello World!';
+          }
+     }
+     ```
+     Then save the file to your App/controllers/ directory.
+
+     ###### Note => 1. The controller name must be same as the class name.
+                   2. Class names must start with an uppercase letter.
+                   3. always make sure your controller extends the parent controller class so that it can inherit all its           methods.
+               so
+                    The file must be called ‘Blog.php’, with a capital ‘B’ .
+
+     Now visit the your site using a URL similar to this:
+
+     ```
+     example.com/Blog/
+     ```
+
+     If you did it right, you should see:
+     ```
+          Hello World!
+     ```
+     #### Methods
+     In the above example the method name is index(). The “index” method is always loaded by default if the second segment of the URI is empty. Another way to show your “Hello World” message would be this:
+     ```
+     example.com/Blog/index/
+     ```
+     ###### The second segment of the URI determines which method in the controller gets called.
+
+     ``` PHP
+     class Blog extends Controller {
+
+          public function index() {
+               echo 'Hello World!';
+          }
+
+          public function posts() {
+               echo 'Nice Post';
+          }
+     }
+     ```
+     Now load the following URL to see the comment method:
+
+     ```
+     example.com/Blog/posts/
+     ```
+     You should see your new message "Nice Post".
+
+     ##### Passing URI Segments to your methods
+
+     If your URI contains more than two segments they will be passed to your method as parameters.
+
+     For example, let’s say you have a URI like this:
+     
+     ```
+     example.com/Users/profile/Ishaq/123
+     ```
+     Your method will be passed URI segments 3 and 4 (“sandals” and “123”):
+
+     ``` PHP
+     class Users extends Controller {
+
+        public function profile($name, $id) {
+                echo $name;
+                echo $id;
         }
-}
-```
-Then save the file to your App/controllers/ directory.
+     }
+     ```
+     ##### Defining a Default Controller
 
-######Note => The controller name must be same as the class name so
-               
-               The file must be called ‘Blog.php’, with a capital ‘B’ .
+     Ganmo can be told to load a default controller when a URI is not present, as will be the case when only your site root URL is requested. To specify a default controller, open your App/config/config.php file and set this variable:
 
-Now visit the your site using a URL similar to this:
-
-```
-example.com/index.php/blog/
-```
-
-
+     ``` PHP
+     define('DEFAULT_CONTROLLER', 'Welcome');
+     ```
+### views
+     
+     
 ## Documentation
 More documentation coming soon..
 
