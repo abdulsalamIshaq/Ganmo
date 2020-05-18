@@ -166,8 +166,8 @@ Your method will be passed URI segments 3 and 4 (“sandals” and “123”):
 class Users extends Controller {
 
      public function profile($name, $id) {
-               echo $name;
-               echo $id;
+          echo $name;
+          echo $id;
      }
 }
 ```
@@ -179,8 +179,89 @@ Ganmo can be told to load a default controller when a URI is not present, as wil
 define('DEFAULT_CONTROLLER', 'Welcome');
 ```
 ### views
-     
-     
+
+A view is simply a web page, or a page fragment, like a header, footer, sidebar, etc. In fact, views can flexibly be embedded within other views (within other views, etc., etc.) if you need this type of hierarchy.
+
+Views are never called directly, they must be loaded by a controller. Remember that in an MVC framework, the Controller acts as the traffic cop, so it is responsible for fetching a particular view. If you have not read the Controllers page you should do so before continuing.
+
+Using the example controller you created in the controller page, let’s add a view to it.
+
+#### Creating a View
+
+``` HTML
+<html>
+<head>
+        <title>My Blog</title>
+</head>
+<body>
+        <h1>Welcome to my Blog!</h1>
+</body>
+</html>
+```
+
+Then save the file in your App/views/ directory.
+
+#### Loading a View
+
+To load a particular view file you will use the following method:
+
+``` PHP
+$this->view('name');
+```
+Where name is the name of your view file.
+
+#### Note => 
+The .php file extension does not need to be specified unless you use something other than .php.
+
+Now, open the controller file you made earlier called Blog.php, and replace the echo statement with the view loading method:
+
+``` PHP
+class Blog extends Controller {
+
+     public function index() {
+        $this->view('blogView');
+     }
+}
+```
+
+If you visit your site using the URL you did earlier you should see your new view. The URL was similar to this:
+
+```
+example.com/Blog
+```
+
+#### Loading multiple views
+Ganmo will intelligently handle multiple calls to $this->view() from within a controller. If more than one call happens they will be appended together. For example, you may wish to have a header view, a menu view, a content view, and a footer view. That might look something like this:
+``` PHP
+class Page extends Controller {
+
+        public function index()
+        {
+                $data['page_title'] = 'Your title';
+                $this->view('header');
+                $this->view('menu');
+                $this->view('content', $data);
+                $this->view('footer');
+        }
+
+}
+```
+In the example above, we are using “dynamically added data”, which you will see below.
+
+#### Storing Views within Sub-directories
+
+Your view files can also be stored within sub-directories if you prefer that type of organization. When doing so you will need to include the directory name loading the view. Example:
+
+``` PHP
+$this->view('directory_name/file_name');
+```
+
+#### Adding Dynamic Data to the View
+
+Data is passed from the controller to the view by way of an **array** or an **object** in the second parameter of the view loading method. Here is an example using an array:
+
+
+
 ## Documentation
 More documentation coming soon..
 
