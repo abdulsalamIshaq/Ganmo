@@ -227,7 +227,7 @@ class Blog extends Controller {
 If you visit your site using the URL you did earlier you should see your new view. The URL was similar to this:
 
 ```
-example.com/Blog
+example.com/Blog/
 ```
 
 #### Loading multiple views
