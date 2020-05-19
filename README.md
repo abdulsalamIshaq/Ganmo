@@ -260,8 +260,28 @@ $this->view('directory_name/file_name');
 
 Data is passed from the controller to the view by way of an **array** or an **object** in the second parameter of the view loading method. Here is an example using an array:
 
+``` php
+$data = array(
+        'title' => 'My Title',
+        'heading' => 'My Heading',
+        'message' => 'My Message'
+);
 
+$this->view('blogview', $data);
+```
+#### Let’s try it with your controller file. Open it add this code:
+``` php
+class Blog extends Controller {
 
+     public function index()
+     {
+          $data['title'] = "My Real Title";
+          $data['heading'] = "My Real Heading";
+
+          $this->load->view('blogview', $data);
+     }
+}
+```
 ## Documentation
 More documentation coming soon..
 
