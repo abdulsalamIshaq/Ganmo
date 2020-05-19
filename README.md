@@ -278,7 +278,7 @@ class Blog extends Controller {
           $data['title'] = "My Real Title";
           $data['heading'] = "My Real Heading";
 
-          $this->load->view('blogview', $data);
+          $this->view('blogview', $data);
      }
 }
 ```
