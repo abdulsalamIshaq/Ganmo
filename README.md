@@ -282,6 +282,166 @@ class Blog extends Controller {
      }
 }
 ```
+Now open your view file and change the text to variables that correspond to the array keys in your data:
+
+``` HTML
+ <html>
+ <head>
+     <title><?php echo $title; ?></title>
+ </head>
+ <body>
+     <h1><?php echo $heading; ?></h1>
+ </body>
+ </html>
+```
+Then load the page at the URL you’ve been using
+#### Creating Loops
+The data array you pass to your view files is not limited to simple variables. You can pass multi dimensional arrays, which can be looped to generate multiple rows. For example, if you pull data from your database it will typically be in the form of a multi-dimensional array.
+
+
+Here’s a simple example. Add this to your controller:
+``` PHP
+class Blog extends Controller {
+
+    public function index()
+    {
+        $data['todo'] = array('Animal', 'Place', 'Things');
+
+        $data['title'] = "My Real Title";
+        $data['heading'] = "My Real Heading";
+
+        $this->view('blogview', $data);
+    }
+}
+```
+Now open your view file and create a loop:
+``` HTML
+ <html>
+ <head>
+     <title><?php echo $title; ?></title>
+ </head>
+ <body>
+     <h1><?php echo $heading; ?></h1>
+     <ul>
+         <?php foreach ($todo as $item) : ?>
+
+             <li><?php echo $item; ?></li>
+
+         <?php endforeach; ?>
+     </ul>
+ </body>
+ </html>
+```
+#### Alternative Echos
+Normally to echo, or print out a variable you would do this:
+``` Php
+<?php
+echo $variable;
+?>
+```
+With the alternative syntax you can instead do it this way:
+``` php
+<?=$variable?>
+```
+#### Alternative Control Structures
+Controls structures, like if, for, foreach, and while can be written in a simplified format as well. Here is an example using foreach:
+``` HTML
+<ul>
+<?php foreach ($todo as $item): ?>
+        <li><?=$item?></li>
+<?php endforeach; ?>
+</ul>
+```
+Notice that there are no braces. Instead, the end brace is replaced with endforeach. Each of the control structures listed above has a similar closing syntax: **endif**, **endfor**, **endforeach**, and **endwhile**
+
+Also notice that instead of using a semicolon after each structure (except the last one), there is a colon. This is important!
+
+Here is another example, using **if/elseif/else**. Notice the colons:
+``` HTML
+<?php if ($username === 'sally'): ?>
+
+        <h3>Hi Sally</h3>
+
+<?php elseif ($username === 'joe'): ?>
+
+        <h3>Hi Joe</h3>
+
+<?php else: ?>
+
+        <h3>Hi unknown user</h3>
+
+<?php endif; ?>
+```
+### Models
+Models are PHP classes that are designed to work with information in your database. For example, let’s say you use Gamo to manage a blog. You might have a model class that contains functions to **insert**, and **retrieve** your blog data. Here is an example of what such a model class might look like:
+``` PHP
+class Post extends Model {
+
+    public function get_all_post_data() {
+        $query = $this->db->query('SELECT * FROM post');
+        $result =  $this->db->fetch($query);
+        if ($result) {
+            return $result;
+        } else {
+            return false;
+        }
+    }
+
+    public function insert_post() {
+        $query = $this->db->query('INSERT INTO post VALUES (:title, :body)');
+        $this->db->bind(array(
+            'title' => $_POST['title'],
+            'body' => $_POST['body']
+        ));
+        if($this->db->execute()) {
+        return true;
+        } else {
+        return false;
+        }
+    }
+}
+```
+#### Loading a Model
+Your models will typically be loaded and called from within your controller methods. To load a model you will use the following method:
+``` PHP
+$this->model('model_name');
+```
+If your model is located in a sub-directory, include the relative path from your models directory. For example, if you have a model located at App/models/blog/Queries.php you’ll load it using:
+``` Php
+$this->model('blog/queries');
+```
+Once loaded, you will access your model methods by setting the model to a variable:
+``` PHp
+$this->variable = $this->model('model_name');
+
+$this->variable->method();
+```
+Here is an example of a controller, that loads a model, then serves a view:
+``` PHP
+<?php
+
+class Blog extends Controller
+{
+	public function __construct() {
+		$this->Blog = $this->model('Post');
+	}
+    public function index()
+    {
+        $data['post'] = $this->Blog->get_all_post_data();
+
+        $this->view('blogview', $data);
+    }
+}
+```
+#### Connecting to your Database
+When a model is loaded it does NOT connect automatically to your database you need to edit App/config/config.php and fill the details
+``` PHP
+define('DB_HOST', 'localhost');
+define('DB_USER', '_USERNAME_');
+define('DB_PASS', '_PASSWORD_');
+define('DB_NAME', '_DBNAME_');
+```
+### Helper Functions
 ## Documentation
 More documentation coming soon..
 

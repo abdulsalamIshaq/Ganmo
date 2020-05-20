@@ -47,14 +47,15 @@ class Controller {
      * @return	string
      */
     public static function view($view, $data = []) {
-
+        extract($data);
         if(file_exists("../app/views/" . $view . ".php")){
             /**
              * if views exists include view
              */
             //str_re
+
             include_once "../app/views/" . $view . ".php";
-            //return;
+            return;
         }else{
             /**
              * if view does not exists return error view not found
@@ -79,8 +80,8 @@ class Controller {
          * note:
          * Model Name must be == ClassName
          */
-        $var = strtolower($model).'s';
-        $init =  new $var();
+        //$var = strtolower($model).'s';
+        $init =  new $model();
         /*if($model !== $init){
             die('<p style="font-size:30px;"><b style="color:red;">Warning:</b> Model name must be the class name</p>');
         }*/
