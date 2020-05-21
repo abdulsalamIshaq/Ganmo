@@ -18,7 +18,7 @@ Follow the instructions to complete the installation.
 * Apache Server
 * PHP 6+
 * Mysql Database
-
+* Make a clone of this project from github
 #### Note this project wount work on php 6 downward version 
 
 Install Latest version [XAMPP](https://www.apachefriends.org/it/index.html) for an easy quickstart on windows
@@ -77,21 +77,6 @@ define('BASE_URL', '_YOUR_URL_');
 define('SITENAME', '_YOUR_SITENAME_');
 ```
 
-### Htaccess file
-
-Modify the .htaccess file inside the public folder to match the name of your installation folder,
-Modify only the RewriteBase to /__PROJECT_ROOT_FOLDER__/public.
-
-```
-<IfModule mod_rewrite.c>
-  Options -Multiviews
-  RewriteEngine On 
-  RewriteBase /Ganmo/public 
-  RewriteCond %{REQUEST_FILENAME} !-d 
-  RewriteCond %{REQUEST_FILENAME} !-f 
-  RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
-</IfModule>
-```
 ### Controllers
 A Controller is simply a class file that is named in a way that can be associated with a URI.
 Controllers are the heart of your application, as they determine how HTTP requests should be handled.
@@ -441,7 +426,263 @@ define('DB_USER', '_USERNAME_');
 define('DB_PASS', '_PASSWORD_');
 define('DB_NAME', '_DBNAME_');
 ```
-### Helper Functions
+### Helper 
+Helpers, as the name suggests, help you with tasks. Each helper file is simply a collection of functions in a particular category.
+
+Helpers are load automatically in Ganmo not in other frameworks like codeigniter.
+
+list of built in helplpers 
+1. array helpers
+2. email helpers
+3. html helpers
+4. string helpers
+5. url helpers
+
+Note as said above this project is in  nascence version, If you develope interest in this project you are welcome to add more helpers function 
+##### coding custome helpers function 
+user must save his/her helper function with the suffix **_helpers**, function will be load automatically
+##### array helpers
+The Array Helper file contains functions that assist in working with arrays.
+**Element Helper**
+Lets you fetch an item from an array. The function tests whether the array index is set and whether it has a value. If a value exists it is returned. If a value does not exist it returns NULL, or whatever you’ve specified as the default value via the third parameter.
+
+``` PHP
+$array = array(
+        'name' => 'Ganmo',
+        'Language' => 'PHP',
+        'version'  => 'PHP 7'
+);
+
+echo element('name', $array); // returns "Ganmo"
+echo element('Language', $array); // returns "PHP"
+echo element('version', $array); // returns "PHP 7"
+```
+**Random Array**
+Takes an array as input and returns a random element from it.
+``` PHP
+$quotes = array(
+        "I find that the harder I work, the more luck I seem to have. - Thomas Jefferson",
+        "Don't stay in bed, unless you can make money in bed. - George Burns",
+        "We didn't lose the game; we just ran out of time. - Vince Lombardi",
+        "If everything seems under control, you're not going fast enough. - Mario Andretti",
+        "Reality is merely an illusion, albeit a very persistent one. - Albert Einstein",
+        "Chance favors the prepared mind - Louis Pasteur"
+);
+
+echo random_array($quotes);
+```
+##### Email helpers
+The Email Helper provides some assistive functions for working with Email. For a more robust email solution, see Ganmo's Email Class.
+
+**Available Functions**
+
+The following functions are available:
+1. 
+``` PHP
+validate_email($email);
+```
+This function returns TRUE if a valid email is supplied, FALSE otherwise
+**Example**
+``` PHP
+if (validate_email('email@ganmo.com'))
+{
+        echo 'email is valid';
+}
+else
+{
+        echo 'email is not valid';
+}
+```
+2. 
+``` PHP
+send($recipient, $subject, $message)
+```
+This function returns TRUE if the mail was successfully sent, FALSE in case of an error
+
+Sends an email using PHP’s native mail() function.
+``` PHP
+send($recipient, $subject, $message)
+```
+##### HTML helper
+The HTML Helper file contains functions that assist in working with HTML.
+
+**Available Functions**
+The following functions are available:
+
+1. 
+``` Php
+h([$data = ''[, $h = '1'[, $attributes = '']]]);
+```
+returns an HTML heading tag
+
+Lets you create HTML heading tags. The first parameter will contain the data, the second the size of the heading. Example:
+
+``` php
+echo h('Welcome!', 3);
+```
+The above would produce: <h3>Welcome!</h3>
+
+Additionally, in order to add attributes to the heading tag such as HTML classes, ids or inline styles, a third parameter accepts either a string or an array:
+
+``` php
+echo h('Welcome!', 3, 'class="pink"');
+echo h('How are you?', 4, array('id' => 'question', 'class' => 'green'));
+```
+The above code produces:
+``` Html
+<h3 class="pink">Welcome!<h3>
+<h4 id="question" class="green">How are you?</h4>
+```
+
+2. 
+``` php 
+p($data = '', $attributes = '');
+```
+
+returns an HTML heading tag
+
+Lets you create HTML paragraph tags. Example:
+```php
+echo p('Hello World');
+echo p('Hello World', 'class="paragraph"');
+echo p('Hello World', array( 'class' => 'para', 'id' => 'para'));
+```
+This will produce 
+``` html
+<p>Hello world</p>
+<p class="paragraph">Hello world</p>
+<p class = 'para' id = 'para'>Hello world</p>
+```
+This same way you use paragraph function, the same way you will use the following functions
+1. b()              5. small()          9. sup()
+2. strong()         6. del()
+3. i()              7. ins()
+4. em()             8. sub()
+
+3. br tag function
+``` php
+br([$count = 1])
+```
+Returns: HTML line break tag
+
+Generates line break tags (<br />) based on the number you submit. Example:
+``` php
+echo br(3);
+```
+The above would produce:
+``` html
+<br /><br /><br />
+```
+4. 
+``` php
+nbs([$num = 1])
+```
+Generates non-breaking spaces (&nbsp;) based on the number you submit. Example:
+``` php
+echo nbs(3);
+```
+The above would produce:
+``` html
+&nbsp;&nbsp;&nbsp;
+```
+If you develope interest for this project you can add more html helpers to the little have added
+
+##### string Helpers
+The String Helper file contains functions that assist in working with strings.
+
+**Available Functions**
+The following functions are available:
+``` php
+__($string);
+```
+Return or print strings
+``` php
+echo __('Hello');
+``` 
+this will output 
+``` html
+Hello
+```
+1. 
+``` php
+repeat($data, $num = 1)
+```
+returns Repeated string
+
+Generates repeating copies of the data you submit. Example:
+
+``` php
+$string = "\n";
+echo repeat($string, 30);
+```
+The above would generate 30 newlines.
+
+2. 
+``` php
+token()
+```
+generates a random string as token
+``` php
+echo token();
+```
+output
+``` html
+61970b78d45a61fd6c8f137820fa5e78eaff246524d4cb6731fda9e0d6978e08
+```
+3. die and dump
+``` php 
+dd($string, $default = 'NULL')
+```
+this function is same as var_dump()
+``` php
+$array = array(
+        'name' => 'Ganmo',
+        'Language' => 'PHP',
+        'version'  => 'PHP 7'
+);
+
+dd($array);
+```
+this returns
+``` php
+array(3) { ["name"]=> string(5) "Ganmo" ["Language"]=> string(3) "PHP" ["version"]=> string(5) "PHP 7" }
+```
+
+##### url helper
+The URL Helper file contains functions that assist in working with URLs.
+
+**Available Functions**
+
+The following functions are available:
+1. Site URL
+``` php
+url($url)
+```
+Returns: Site URL
+
+``` php
+url('news/local/123')
+```
+Returns your site URL, as specified in your config file. The index.php file (or whatever you have set as your site index_page in your config file) will be added to the URL, as will any URI segments you pass to the function, plus the url_suffix as set in your config file.
+
+You are encouraged to use this function any time you need to generate a local URL so that your pages become more portable in the event your URL changes.
+
+Segments can be optionally passed to the function as a string or an array. Here is a string example:
+
+The above example would return something like: http://example.com/index.php/news/local/123
+
+2. redirect
+``` php
+redirect($url)
+```
+redired to a specified url
+``` php
+redirect('/Home');
+```
+this will redired from current url to http://example.com/Home
+#### libraries 
+Libraries are still in developement
+ 
 ## Documentation
 More documentation coming soon..
 

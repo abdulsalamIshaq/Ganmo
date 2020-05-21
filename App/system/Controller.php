@@ -87,9 +87,10 @@ class Controller {
         }*/
         return $init;
     }
-/*
-    public static function helper($helper)
+
+    /*public static function helper($helper)
     {
+
         /**
          * include models
          */
