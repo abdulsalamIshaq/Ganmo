@@ -47,7 +47,9 @@ class Controller {
      * @return	string
      */
     public static function view($view, $data = []) {
-        extract($data);
+        if ( $data ) {
+            extract($data);
+        }
         if(file_exists("../app/views/" . $view . ".php")){
             /**
              * if views exists include view
