@@ -1,5 +1,5 @@
 <?php
-class posts extends Model
+class Post extends Model
 {
 
     public function p()

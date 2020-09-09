@@ -1,0 +1,121 @@
+[07-Sep-2020 22:13:49 Africa/Lagos] Not Found. The controller/method pair you requested was not found.
+[07-Sep-2020 22:13:49 Africa/Lagos] 404 not found error_genral Exceptions: 404 not found error_genral in C:\xampp\htdocs\Ganmo\system\core\Functions.php:51
+Stack trace:
+#0 C:\xampp\htdocs\Ganmo\system\core\Uri.php(50): show_error('Not Found', 'The controller/...', 'error_genral')
+#1 C:\xampp\htdocs\Ganmo\index.php(58): URI->__construct()
+#2 {main}
+[07-Sep-2020 22:13:49 Africa/Lagos] PHP Fatal error:  Uncaught Exceptions: 404 not found error_genral in C:\xampp\htdocs\Ganmo\system\core\Functions.php:51
+Stack trace:
+#0 C:\xampp\htdocs\Ganmo\system\core\Uri.php(50): show_error('Not Found', 'The controller/...', 'error_genral')
+#1 C:\xampp\htdocs\Ganmo\index.php(58): URI->__construct()
+#2 {main}
+  thrown in C:\xampp\htdocs\Ganmo\system\core\Functions.php on line 51
+[07-Sep-2020 22:20:23 Africa/Lagos] Not Found. The controller/method pair you requested was not found.
+[07-Sep-2020 22:20:23 Africa/Lagos] 404 not found error_genral Exceptions: 404 not found error_genral in C:\xampp\htdocs\Ganmo\system\core\Functions.php:51
+Stack trace:
+#0 C:\xampp\htdocs\Ganmo\system\core\Uri.php(50): show_error('Not Found', 'The controller/...', 'error_genral')
+#1 C:\xampp\htdocs\Ganmo\index.php(58): URI->__construct()
+#2 {main}
+[07-Sep-2020 22:20:23 Africa/Lagos] PHP Fatal error:  Uncaught Exceptions: 404 not found error_genral in C:\xampp\htdocs\Ganmo\system\core\Functions.php:51
+Stack trace:
+#0 C:\xampp\htdocs\Ganmo\system\core\Uri.php(50): show_error('Not Found', 'The controller/...', 'error_genral')
+#1 C:\xampp\htdocs\Ganmo\index.php(58): URI->__construct()
+#2 {main}
+  thrown in C:\xampp\htdocs\Ganmo\system\core\Functions.php on line 51
+[07-Sep-2020 22:23:55 Africa/Lagos] PHP Notice:  Undefined property: About::$library_error_message in C:\xampp\htdocs\Ganmo\system\core\Controller.php on line 83
+[07-Sep-2020 22:23:55 Africa/Lagos]  Exceptions in C:\xampp\htdocs\Ganmo\system\core\Controller.php:83
+Stack trace:
+#0 C:\xampp\htdocs\Ganmo\app\controllers\About.php(27): Controller->library(Array)
+#1 C:\xampp\htdocs\Ganmo\system\core\Uri.php(58): About->name()
+#2 C:\xampp\htdocs\Ganmo\index.php(58): URI->__construct()
+#3 {main}
+[07-Sep-2020 22:23:55 Africa/Lagos] PHP Fatal error:  Uncaught Exceptions in C:\xampp\htdocs\Ganmo\system\core\Controller.php:83
+Stack trace:
+#0 C:\xampp\htdocs\Ganmo\app\controllers\About.php(27): Controller->library(Array)
+#1 C:\xampp\htdocs\Ganmo\system\core\Uri.php(58): About->name()
+#2 C:\xampp\htdocs\Ganmo\index.php(58): URI->__construct()
+#3 {main}
+  thrown in C:\xampp\htdocs\Ganmo\system\core\Controller.php on line 83
+[07-Sep-2020 22:24:47 Africa/Lagos] The Library Class you requested was not found Exceptions: The Library Class you requested was not found in C:\xampp\htdocs\Ganmo\system\core\Controller.php:84
+Stack trace:
+#0 C:\xampp\htdocs\Ganmo\app\controllers\About.php(27): Controller->library(Array)
+#1 C:\xampp\htdocs\Ganmo\system\core\Uri.php(58): About->name()
+#2 C:\xampp\htdocs\Ganmo\index.php(58): URI->__construct()
+#3 {main}
+[07-Sep-2020 22:24:47 Africa/Lagos] PHP Fatal error:  Uncaught Exceptions: The Library Class you requested was not found in C:\xampp\htdocs\Ganmo\system\core\Controller.php:84
+Stack trace:
+#0 C:\xampp\htdocs\Ganmo\app\controllers\About.php(27): Controller->library(Array)
+#1 C:\xampp\htdocs\Ganmo\system\core\Uri.php(58): About->name()
+#2 C:\xampp\htdocs\Ganmo\index.php(58): URI->__construct()
+#3 {main}
+  thrown in C:\xampp\htdocs\Ganmo\system\core\Controller.php on line 84
+[07-Sep-2020 22:25:12 Africa/Lagos] The Library Class you requested was not found Exceptions: The Library Class you requested was not found in C:\xampp\htdocs\Ganmo\system\core\Controller.php:84
+Stack trace:
+#0 C:\xampp\htdocs\Ganmo\app\controllers\About.php(27): Controller->library(Array)
+#1 C:\xampp\htdocs\Ganmo\system\core\Uri.php(58): About->name()
+#2 C:\xampp\htdocs\Ganmo\index.php(58): URI->__construct()
+#3 {main}
+[07-Sep-2020 22:25:12 Africa/Lagos] PHP Fatal error:  Uncaught Exceptions: The Library Class you requested was not found in C:\xampp\htdocs\Ganmo\system\core\Controller.php:84
+Stack trace:
+#0 C:\xampp\htdocs\Ganmo\app\controllers\About.php(27): Controller->library(Array)
+#1 C:\xampp\htdocs\Ganmo\system\core\Uri.php(58): About->name()
+#2 C:\xampp\htdocs\Ganmo\index.php(58): URI->__construct()
+#3 {main}
+  thrown in C:\xampp\htdocs\Ganmo\system\core\Controller.php on line 84
+[07-Sep-2020 22:26:19 Africa/Lagos] The Library Class you requested was not found Exceptions: The Library Class you requested was not found in C:\xampp\htdocs\Ganmo\system\core\Controller.php:93
+Stack trace:
+#0 C:\xampp\htdocs\Ganmo\app\controllers\About.php(27): Controller->library('Session')
+#1 C:\xampp\htdocs\Ganmo\system\core\Uri.php(58): About->name()
+#2 C:\xampp\htdocs\Ganmo\index.php(58): URI->__construct()
+#3 {main}
+[07-Sep-2020 22:26:19 Africa/Lagos] PHP Fatal error:  Uncaught Exceptions: The Library Class you requested was not found in C:\xampp\htdocs\Ganmo\system\core\Controller.php:93
+Stack trace:
+#0 C:\xampp\htdocs\Ganmo\app\controllers\About.php(27): Controller->library('Session')
+#1 C:\xampp\htdocs\Ganmo\system\core\Uri.php(58): About->name()
+#2 C:\xampp\htdocs\Ganmo\index.php(58): URI->__construct()
+#3 {main}
+  thrown in C:\xampp\htdocs\Ganmo\system\core\Controller.php on line 93
+[07-Sep-2020 22:27:03 Africa/Lagos] The Helper function you requested was not found Exceptions: The Helper function you requested was not found in C:\xampp\htdocs\Ganmo\system\core\Controller.php:55
+Stack trace:
+#0 C:\xampp\htdocs\Ganmo\app\controllers\About.php(26): Controller->helper(Array)
+#1 C:\xampp\htdocs\Ganmo\system\core\Uri.php(58): About->name()
+#2 C:\xampp\htdocs\Ganmo\index.php(58): URI->__construct()
+#3 {main}
+[07-Sep-2020 22:27:03 Africa/Lagos] PHP Fatal error:  Uncaught Exceptions: The Helper function you requested was not found in C:\xampp\htdocs\Ganmo\system\core\Controller.php:55
+Stack trace:
+#0 C:\xampp\htdocs\Ganmo\app\controllers\About.php(26): Controller->helper(Array)
+#1 C:\xampp\htdocs\Ganmo\system\core\Uri.php(58): About->name()
+#2 C:\xampp\htdocs\Ganmo\index.php(58): URI->__construct()
+#3 {main}
+  thrown in C:\xampp\htdocs\Ganmo\system\core\Controller.php on line 55
+[07-Sep-2020 22:28:10 Africa/Lagos] The Library Class you requested was not found Exceptions: The Library Class you requested was not found in C:\xampp\htdocs\Ganmo\system\core\Controller.php:93
+Stack trace:
+#0 C:\xampp\htdocs\Ganmo\app\controllers\About.php(27): Controller->library('Session')
+#1 C:\xampp\htdocs\Ganmo\system\core\Uri.php(58): About->name()
+#2 C:\xampp\htdocs\Ganmo\index.php(58): URI->__construct()
+#3 {main}
+[07-Sep-2020 22:28:10 Africa/Lagos] PHP Fatal error:  Uncaught Exceptions: The Library Class you requested was not found in C:\xampp\htdocs\Ganmo\system\core\Controller.php:93
+Stack trace:
+#0 C:\xampp\htdocs\Ganmo\app\controllers\About.php(27): Controller->library('Session')
+#1 C:\xampp\htdocs\Ganmo\system\core\Uri.php(58): About->name()
+#2 C:\xampp\htdocs\Ganmo\index.php(58): URI->__construct()
+#3 {main}
+  thrown in C:\xampp\htdocs\Ganmo\system\core\Controller.php on line 93
+[08-Sep-2020 11:45:02 Africa/Lagos] PHP Notice:  Undefined variable: helper in C:\xampp\htdocs\Ganmo\system\core\Controller.php on line 101
+[08-Sep-2020 11:49:26 Africa/Lagos] 404 Page Not Found. The page you requested was not found.
+[08-Sep-2020 11:49:26 Africa/Lagos] PHP Warning:  include(C:\xampp\htdocs\Ganmo\app\views/errors/html/errors/html/error_404.php): failed to open stream: No such file or directory in C:\xampp\htdocs\Ganmo\system\core\Functions.php on line 31
+[08-Sep-2020 11:49:26 Africa/Lagos] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\Ganmo\app\views/errors/html/errors/html/error_404.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Ganmo\system\core\Functions.php on line 31
+[08-Sep-2020 11:58:02 Africa/Lagos] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 262144 bytes) in C:\xampp\htdocs\Ganmo\system\core\Controller.php on line 26
+[08-Sep-2020 12:01:21 Africa/Lagos] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 262144 bytes) in C:\xampp\htdocs\Ganmo\system\core\Controller.php on line 26
+[08-Sep-2020 12:02:11 Africa/Lagos] PHP Warning:  htmlspecialchars() expects parameter 1 to be string, array given in C:\xampp\htdocs\Ganmo\system\core\Controller.php on line 26
+[08-Sep-2020 12:02:11 Africa/Lagos] PHP Warning:  extract() expects parameter 1 to be array, null given in C:\xampp\htdocs\Ganmo\system\core\Controller.php on line 35
+[08-Sep-2020 12:02:36 Africa/Lagos] PHP Warning:  extract() expects parameter 1 to be array, null given in C:\xampp\htdocs\Ganmo\system\core\Controller.php on line 35
+[08-Sep-2020 12:05:10 Africa/Lagos] 404 Page Not Found. The page you requested was not found.
+[08-Sep-2020 12:05:10 Africa/Lagos] PHP Warning:  require_once(C:\xampp\htdocs\Ganmo\app\views/errors/html/errors/html/error_404.php): failed to open stream: No such file or directory in C:\xampp\htdocs\Ganmo\system\core\Functions.php on line 31
+[08-Sep-2020 12:05:10 Africa/Lagos] PHP Fatal error:  require_once(): Failed opening required 'C:\xampp\htdocs\Ganmo\app\views/errors/html/errors/html/error_404.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Ganmo\system\core\Functions.php on line 31
+[08-Sep-2020 12:05:24 Africa/Lagos] 404 Page Not Found. The page you requested was not found.
+[08-Sep-2020 12:05:24 Africa/Lagos] PHP Warning:  require_once(C:\xampp\htdocs\Ganmo\app\views/errors/html/errors/html/error_404.php): failed to open stream: No such file or directory in C:\xampp\htdocs\Ganmo\system\core\Functions.php on line 31
+[08-Sep-2020 12:05:24 Africa/Lagos] PHP Fatal error:  require_once(): Failed opening required 'C:\xampp\htdocs\Ganmo\app\views/errors/html/errors/html/error_404.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Ganmo\system\core\Functions.php on line 31
+[08-Sep-2020 12:05:53 Africa/Lagos] 404 Page Not Found. The page you requested was not found.
+[08-Sep-2020 12:05:53 Africa/Lagos] PHP Warning:  require_once(C:\xampp\htdocs\Ganmo\app\errors/html/error_404.php): failed to open stream: No such file or directory in C:\xampp\htdocs\Ganmo\system\core\Functions.php on line 31
+[08-Sep-2020 12:05:53 Africa/Lagos] PHP Fatal error:  require_once(): Failed opening required 'C:\xampp\htdocs\Ganmo\app\errors/html/error_404.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Ganmo\system\core\Functions.php on line 31

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\helpers;
+//namespace App\helpers;
 
 /**
  * An open source application developement framework for php
